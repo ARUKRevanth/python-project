@@ -1,0 +1,8 @@
+def final_position(A):
+    # Calculate the final position by summing the moves
+    return sum(A)
+
+# Example usage
+A = [1, -1, 1, 1, -1, -1]  # Example moves
+position = final_position(A)
+print("Final position of the ant:", position)
