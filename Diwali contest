@@ -1,0 +1,27 @@
+def max_problems_solved(P, N):
+    # Total time available in minutes
+    total_time = 240  # 4 hours
+    time_available = total_time - P  # Time left for solving problems
+    
+    # Initialize variables
+    k = 0  # Number of problems solved
+    time_used = 0  # Time spent solving problems
+    
+    # Loop to find the maximum number of problems Max can solve
+    while k < N:
+        k += 1  # Move to the next problem
+        time_needed = 5 * k  # Time needed to solve the k-th problem
+        time_used += time_needed  # Update total time used
+        
+        if time_used > time_available:
+            break  # Stop if time exceeds available time
+            
+    return k - 1  # Return the last valid number of problems solved
+
+# Example usage:
+if __name__ == "__main__":
+    P = int(input("Enter travel time in minutes (P): "))
+    N = int(input("Enter total number of problems (N): "))
+    
+    result = max_problems_solved(P, N)
+    print(f"Max number of problems Max can solve: {result}")
