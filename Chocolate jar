@@ -1,0 +1,29 @@
+def distribute_chocolates(chocolates):
+    # Initialize counters for A, B, and C
+    count_A = 0
+    count_B = 0
+    count_C = 0
+    
+    # Number of students
+    num_students = 3
+    
+    # Iterate through each jar
+    for jar in chocolates:
+        # Distribute chocolates until the jar is empty
+        while jar > 0:
+            if jar > 0:  # A's turn
+                count_A += 1
+                jar -= 1
+            if jar > 0:  # B's turn
+                count_B += 1
+                jar -= 1
+            if jar > 0:  # C's turn
+                count_C += 1
+                jar -= 1
+    
+    return count_A, count_B, count_C
+
+# Example usage
+chocolates = [4, 5, 3]  # Jars with chocolates
+result = distribute_chocolates(chocolates)
+print("Chocolates picked by A, B, and C:", result)
