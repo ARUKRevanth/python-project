@@ -4,14 +4,12 @@ def max_score(A, K):
     max_sum = max(max_sum, window_sum)
 
     for i in range(K, len(A)):
-        window_sum = window_sum - A[i-K] + A[i] * (i+1)
+        window_sum = window_sum - A[i - K] + A[i]  # Correctly updating the window sum
         max_sum = max(max_sum, window_sum)
 
     return max_sum
 
 # Test the function
 A = [1, 2, 3, 4, 5]
-K = 3
-print(max_score(A, K))
-
-
+K = 2
+print(max_score(A, K))  
